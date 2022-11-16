@@ -37,4 +37,5 @@ recomendado o seu uso
 
 if __name__ == "__main__":
     print("Hello, world!")
+    print("Teste git")
 
