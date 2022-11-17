@@ -14,6 +14,8 @@ Dentro do laço for, podemos utilizar 2 comandos
     - break: Interrompe imediatamente a execução do laço for
     - continue: Ignora o resto do bloco, e volta a linha do for
 
+Também podemos utilizar else ao lado do for, para executar um bloco após o laço for ter terminado.
+
 """
 
 # Leia os itens da lista até encontrar a palavra "Nenhuma". Caso encontre, saia do loop.
@@ -28,6 +30,8 @@ if __name__ == "__main__":
             break       # Interrompe o loop e sai
         print(palavra)
 
+    print("-"*20)
+
     lista_numeros = [
         5, 10, 14, 7, 8
     ]
@@ -38,8 +42,15 @@ if __name__ == "__main__":
         if numero % 2 == 1:
             continue
 
-        if 1 == 1:
-            pass
+        if numero == 98:
+            break
 
         soma += numero
+    else:
+        print("Todos os itens foram processados")
+
     print(f"Soma: {soma}")
+
+    # Utilizando for com a função geradora range()
+    for numero in range(1, 100):
+        print(numero)
