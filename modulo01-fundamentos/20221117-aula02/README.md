@@ -150,11 +150,3 @@ print(lista[::2])       # Irá mostrar a lista ["Python", "CSharp", "Kotlin", "P
 #### Adicionando e removendo elementos de um dicionário
 #### Loop em dicionários
 #### Copiando dicionários
-
-## Exercícios laços de repetição
-
-1. Calcule a soma de todos os números de 1 até o número informado. O usuário deve informar um número qualquer maior do que 0 e o programa deve retornar a soma de todos os números de 1 até esse número.
-```python
-Informe o número: 5
-A soma de todos os números de 1 até 5 é 15
-```
