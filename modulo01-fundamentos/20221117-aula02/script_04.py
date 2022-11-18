@@ -80,3 +80,37 @@ if __name__ == "__main__":
     print(lista1[2:5])      # Pegando os itens 3 a 5 da sequência
     print(lista1[-1])       # Retornando apenas o último item
     print(lista1[2:])       # A partir do índice 2, retorna todos os itens restantes
+    print(lista1[:2])       # Pega todos os valores até o índice 2
+    print(lista1[::2])      # Pegamos todos os itens da lista de 2 em 2
+    print(lista1[::])       # Retorna uma cópia da lista
+
+    print(f"{'-' * 15} copiando listas {'-' * 15}")
+
+    # Atribuindo o valor da variável lista1 para lista2
+    lista2 = lista1
+
+    print(lista1)
+    print(lista2)
+
+    # Nesse caso, o índice 0 da variável lista1 será alterado de forma indireta, pois
+    # lista2 aponta para a mesma posição de memória que lista1, portando quaisquer
+    # alterações feitas em qualquer uma dessas listas, irá refletir na outra
+    lista2[0] = "Angola"
+
+    print(lista1)
+    print(lista2)
+
+    # Existem 2 maneiras de atribuir corretamente o valor de uma lista em outra
+    # copy()
+    lista2 = lista1.copy()
+    lista2[0] = "Chile"
+
+    print(lista1)
+    print(lista2)
+
+    # Utilizando a sintaxe do slice (fatiamento) [::]
+    lista2 = lista1[::]
+    lista2[0] = "Uruguai"
+
+    print(lista1)
+    print(lista2)
