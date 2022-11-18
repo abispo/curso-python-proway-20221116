@@ -81,7 +81,7 @@ if __name__ == "__main__":
     print(lista1[-1])       # Retornando apenas o último item
     print(lista1[2:])       # A partir do índice 2, retorna todos os itens restantes
     print(lista1[:2])       # Pega todos os valores até o índice 2
-    print(lista1[::2])      # Pegamos todos os itens da lista de 2 em 2
+    print(lista1[2::2])      # Pegamos todos os itens da lista de 2 em 2
     print(lista1[::])       # Retorna uma cópia da lista
 
     print(f"{'-' * 15} copiando listas {'-' * 15}")
