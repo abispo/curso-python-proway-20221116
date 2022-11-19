@@ -44,17 +44,16 @@ if __name__ == "__main__":
     lista_repetidos = []
     nova_lista = []
 
+    # Devemos agora remover os itens repetidos da lista
+    # Assim faríamos sem o uso do set
+
     # for item in lista_numeros:
     #     if item not in lista_repetidos:
     #         nova_lista.append(item)
-    #         lista_repetidos.append(item)
-    #     else:
     #         lista_repetidos.append(item)
     #
     # nova_lista.sort()
     # print(nova_lista)
 
-    # Devemos agora remover os itens repetidos da lista
     lista_numeros.sort()
     print(list(set(lista_numeros)))
-
