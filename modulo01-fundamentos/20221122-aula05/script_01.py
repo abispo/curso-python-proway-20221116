@@ -2,6 +2,8 @@
 Entrada e saída de arquivos txt
 I/O de arquivos (Input/Output)
 
+Leitura de arquivos txt
+
 """
 
 import os
