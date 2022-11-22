@@ -13,7 +13,7 @@ Se a media for igual ou maior do que 7, exibir a mensagem "Aprovado"
 """
 
 
-def calcula_nota(nota_1, nota_2, nota_3):
+def calcula_media(nota_1, nota_2, nota_3):
     return (nota_1 + nota_2 + nota_3) / 3
 
 
@@ -29,7 +29,7 @@ def exibir_resultado(media):
 
 if __name__ == "__main__":
 
-    media = calcula_nota(4, 5.5, 5)
+    media = calcula_media(4, 5.5, 5)
     exibir_resultado(media)
 
-    exibir_resultado(calcula_nota(6, 6, 9))
+    exibir_resultado(calcula_media(6, 6, 9))
