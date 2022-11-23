@@ -13,7 +13,7 @@ Heitor: 6 vezes
 .
 ```
 
-Além disso, essas informações devem ser salvas em um arquivo csv (notas.csv), que vai conter 2 colunas:
+Além disso, essas informações devem ser salvas em um arquivo csv (nomes.csv), que vai conter 2 colunas:
 * nome
 * quantidade
 
