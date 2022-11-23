@@ -46,5 +46,5 @@ Dica: Ordene as notas ou utilize as funções built-in `max()` e `min()` para sa
 
 ````python
 lista_alunos = [{"nome": "Maria", "media": 8}, {"nome": "Paula", "media": 7}]
-lista_alunos = [{"nome": "Maria", "media": 8}, {"nome": "Paula", "media": 7}]
+lista_final = sorted(lista_alunos, key=lambda x: x.get("media"))
 ````
