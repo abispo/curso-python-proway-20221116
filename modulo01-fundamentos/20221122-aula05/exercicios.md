@@ -43,3 +43,8 @@ Essas informações devem ser mostradas no terminal
 * Os 10 alunos com as maiores médias
 Detalhe: As médias são calculadas excluindo a melhor e a pior nota de cada aluno. Ou seja, a média é calculada utilizando as 3 notas intermediárias.
 Dica: Ordene as notas ou utilize as funções built-in `max()` e `min()` para saber quais são as melhores e as piores notas
+
+````python
+lista_alunos = [{"nome": "Maria", "media": 8}, {"nome": "Paula", "media": 7}]
+lista_alunos = [{"nome": "Maria", "media": 8}, {"nome": "Paula", "media": 7}]
+````
