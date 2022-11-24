@@ -1,0 +1,510 @@
+Abrindo o arquivo vendas.txt...
+**************************************************
+* INFORMAÇÕES SOBRE AS VENDAS *
+VALOR TOTAL DAS VENDAS: 1232966.66
+VALOR MÉDIO POR VENDEDOR: 12329.67
+**************************************************
+* RANKING DOS VENDEDORES
+Código:                        0080
+Nome:                          Lorenzo Cardoso                         
+Total de Vendas:               19892.51
+Bônus:                         30%
+Valor adicional                R$ 500
+--------------------------------------------------
+Código:                        0070
+Nome:                          Larissa Porto                           
+Total de Vendas:               19863.80
+Bônus:                         30%
+Valor adicional                R$ 250
+--------------------------------------------------
+Código:                        0022
+Nome:                          Diego Teixeira                          
+Total de Vendas:               19860.49
+Bônus:                         30%
+Valor adicional                R$ 125
+--------------------------------------------------
+Código:                        0086
+Nome:                          Ian da Costa                            
+Total de Vendas:               19850.40
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0088
+Nome:                          Melissa Lima                            
+Total de Vendas:               19819.85
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0021
+Nome:                          Maria Fernanda da Cunha                 
+Total de Vendas:               19731.81
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0096
+Nome:                          Antônio Moura                           
+Total de Vendas:               19606.99
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0033
+Nome:                          Isis Rocha                              
+Total de Vendas:               19469.45
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0014
+Nome:                          Lorenzo Silva                           
+Total de Vendas:               19392.65
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0063
+Nome:                          Davi Luiz Rezende                       
+Total de Vendas:               19369.99
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0001
+Nome:                          Paulo Oliveira                          
+Total de Vendas:               19314.47
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0058
+Nome:                          Ana Clara Farias                        
+Total de Vendas:               19181.43
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0025
+Nome:                          Marcelo Cavalcanti                      
+Total de Vendas:               18890.21
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0066
+Nome:                          Luiz Gustavo da Paz                     
+Total de Vendas:               18834.82
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0018
+Nome:                          Luiz Miguel Barbosa                     
+Total de Vendas:               18762.47
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0016
+Nome:                          Sophia Teixeira                         
+Total de Vendas:               18565.62
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0029
+Nome:                          Isabelly Monteiro                       
+Total de Vendas:               18386.68
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0045
+Nome:                          Catarina Moraes                         
+Total de Vendas:               18364.61
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0006
+Nome:                          Caio Pinto                              
+Total de Vendas:               17944.45
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0031
+Nome:                          Luna Santos                             
+Total de Vendas:               17906.71
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0074
+Nome:                          Ana Sophia da Cruz                      
+Total de Vendas:               17584.52
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0036
+Nome:                          Lorena da Conceição                     
+Total de Vendas:               17539.69
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0019
+Nome:                          Lorenzo Duarte                          
+Total de Vendas:               17426.98
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0037
+Nome:                          Isis Viana                              
+Total de Vendas:               17248.67
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0090
+Nome:                          Maitê Alves                             
+Total de Vendas:               16982.86
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0052
+Nome:                          Isabella Fogaça                         
+Total de Vendas:               16925.60
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0012
+Nome:                          Vitor Cavalcanti                        
+Total de Vendas:               16570.11
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0073
+Nome:                          Anthony da Mata                         
+Total de Vendas:               16496.36
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0053
+Nome:                          Bryan Oliveira                          
+Total de Vendas:               16410.35
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0083
+Nome:                          João Miguel Cavalcanti                  
+Total de Vendas:               15713.42
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0008
+Nome:                          Lívia Monteiro                          
+Total de Vendas:               15703.27
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0091
+Nome:                          Heloísa Jesus                           
+Total de Vendas:               15606.56
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0030
+Nome:                          Laura Costa                             
+Total de Vendas:               15315.28
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0015
+Nome:                          Pietro da Luz                           
+Total de Vendas:               15184.69
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0067
+Nome:                          João Gabriel Viana                      
+Total de Vendas:               15071.55
+Bônus:                         30%
+--------------------------------------------------
+Código:                        0048
+Nome:                          Natália Aragão                          
+Total de Vendas:               14942.35
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0042
+Nome:                          Isabel Almeida                          
+Total de Vendas:               14828.35
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0050
+Nome:                          Pedro Pinto                             
+Total de Vendas:               14826.87
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0072
+Nome:                          Renan Campos                            
+Total de Vendas:               14680.25
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0007
+Nome:                          Marcelo Castro                          
+Total de Vendas:               14658.10
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0049
+Nome:                          Emanuelly Martins                       
+Total de Vendas:               13960.14
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0100
+Nome:                          Pedro Henrique Costa                    
+Total de Vendas:               13871.21
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0060
+Nome:                          Marcelo Nascimento                      
+Total de Vendas:               13787.93
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0056
+Nome:                          Maysa Correia                           
+Total de Vendas:               13627.98
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0026
+Nome:                          Pedro Miguel da Luz                     
+Total de Vendas:               13491.67
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0076
+Nome:                          Ian Campos                              
+Total de Vendas:               13416.39
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0099
+Nome:                          Luiz Felipe da Mata                     
+Total de Vendas:               13370.84
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0098
+Nome:                          Luana Araújo                            
+Total de Vendas:               13349.12
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0085
+Nome:                          Ana Lívia Rocha                         
+Total de Vendas:               12535.57
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0032
+Nome:                          Fernanda Peixoto                        
+Total de Vendas:               12378.29
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0005
+Nome:                          Kaique Oliveira                         
+Total de Vendas:               12241.54
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0034
+Nome:                          Rebeca Almeida                          
+Total de Vendas:               12202.52
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0035
+Nome:                          Lucas Gabriel Aragão                    
+Total de Vendas:               12171.68
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0009
+Nome:                          Calebe Vieira                           
+Total de Vendas:               12139.96
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0093
+Nome:                          Maria Vitória Cardoso                   
+Total de Vendas:               12009.65
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0087
+Nome:                          Lorena Ferreira                         
+Total de Vendas:               11995.96
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0077
+Nome:                          Nicolas Correia                         
+Total de Vendas:               11476.19
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0064
+Nome:                          Carolina Peixoto                        
+Total de Vendas:               11225.32
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0069
+Nome:                          Otávio Cavalcanti                       
+Total de Vendas:               11131.83
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0046
+Nome:                          Isis Porto                              
+Total de Vendas:               11121.92
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0023
+Nome:                          Ana Julia Pires                         
+Total de Vendas:               10784.30
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0059
+Nome:                          Kamilly das Neves                       
+Total de Vendas:               10573.74
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0004
+Nome:                          Enzo Ferreira                           
+Total de Vendas:               10496.37
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0041
+Nome:                          Maria Sophia Cardoso                    
+Total de Vendas:               10477.49
+Bônus:                         20%
+--------------------------------------------------
+Código:                        0011
+Nome:                          Gabriela Oliveira                       
+Total de Vendas:               9499.27
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0043
+Nome:                          Yago Cardoso                            
+Total de Vendas:               9480.65
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0089
+Nome:                          Heloísa Dias                            
+Total de Vendas:               9274.24
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0051
+Nome:                          Rafaela Rodrigues                       
+Total de Vendas:               8723.13
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0061
+Nome:                          Marina Ferreira                         
+Total de Vendas:               8608.30
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0038
+Nome:                          Vitor Gabriel Jesus                     
+Total de Vendas:               8540.69
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0082
+Nome:                          Isabel Oliveira                         
+Total de Vendas:               8534.82
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0097
+Nome:                          Eduarda Campos                          
+Total de Vendas:               8381.43
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0095
+Nome:                          Vitor Hugo Cavalcanti                   
+Total de Vendas:               8342.64
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0068
+Nome:                          Luiz Gustavo Campos                     
+Total de Vendas:               8052.29
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0079
+Nome:                          Noah Pires                              
+Total de Vendas:               7876.91
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0027
+Nome:                          Evelyn Lopes                            
+Total de Vendas:               7838.13
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0028
+Nome:                          Davi Lucas Cardoso                      
+Total de Vendas:               7721.37
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0024
+Nome:                          Thomas Alves                            
+Total de Vendas:               7717.85
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0047
+Nome:                          Henrique Aragão                         
+Total de Vendas:               7656.97
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0055
+Nome:                          Isadora da Paz                          
+Total de Vendas:               7219.54
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0054
+Nome:                          Maysa Alves                             
+Total de Vendas:               7200.52
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0071
+Nome:                          Melissa Moreira                         
+Total de Vendas:               6923.40
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0020
+Nome:                          Carlos Eduardo Moura                    
+Total de Vendas:               6540.32
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0065
+Nome:                          Pedro Lucas Pinto                       
+Total de Vendas:               6183.68
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0078
+Nome:                          Gustavo Rezende                         
+Total de Vendas:               6077.20
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0002
+Nome:                          Ana Clara da Mata                       
+Total de Vendas:               5947.37
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0003
+Nome:                          Agatha Martins                          
+Total de Vendas:               5598.51
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0057
+Nome:                          Pedro Cunha                             
+Total de Vendas:               5570.27
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0044
+Nome:                          Bruna Nascimento                        
+Total de Vendas:               5549.57
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0013
+Nome:                          Lorena Gonçalves                        
+Total de Vendas:               5404.20
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0084
+Nome:                          Alice Ferreira                          
+Total de Vendas:               5378.21
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0075
+Nome:                          Eduardo Nogueira                        
+Total de Vendas:               5146.32
+Bônus:                         10%
+--------------------------------------------------
+Código:                        0094
+Nome:                          Marina Rezende                          
+Total de Vendas:               4980.20
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0092
+Nome:                          Vitor Santos                            
+Total de Vendas:               4676.74
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0017
+Nome:                          Melissa Vieira                          
+Total de Vendas:               4421.89
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0062
+Nome:                          Ana Santos                              
+Total de Vendas:               4192.61
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0010
+Nome:                          João Lucas da Mota                      
+Total de Vendas:               3808.40
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0040
+Nome:                          Isadora Pires                           
+Total de Vendas:               3249.82
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0081
+Nome:                          Rebeca Dias                             
+Total de Vendas:               3083.81
+Bônus:                         0%
+--------------------------------------------------
+Código:                        0039
+Nome:                          Davi Lucas Fernandes                    
+Total de Vendas:               3002.54
+Bônus:                         0%
+--------------------------------------------------

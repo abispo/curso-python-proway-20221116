@@ -36,7 +36,9 @@ if __name__ == "__main__":
             data = {
                 "codigo": codigo,
                 "nome": nome,
-                "valor_vendas": valor
+                "valor_vendas": valor,
+                "bonus": 0,
+                "adicional": 0
             }
 
             lista_vendedores.append(data)
@@ -47,8 +49,40 @@ if __name__ == "__main__":
 
         # A função built-in sum() soma todos os valores de uma lista numérica
         valor_total_de_vendas = sum([vendedor.get("valor_vendas") for vendedor in lista_vendedores])
-        print(f"{valor_total_de_vendas:.2f}")
-
         media_total_de_vendas = valor_total_de_vendas / len(lista_vendedores)
-        print(f"{media_total_de_vendas:.2f}")
 
+        for vendedor in lista_vendedores:
+
+            valor_vendas = vendedor.get("valor_vendas")
+
+            if valor_vendas >= 5000 and valor_vendas < 9999.99:
+                vendedor["bonus"] = 10
+            elif valor_vendas >= 10000 and valor_vendas < 14999.99:
+                vendedor["bonus"] = 20
+            elif valor_vendas >= 15000:
+                vendedor["bonus"] = 30
+
+        lista_vendedores = sorted(lista_vendedores, key=lambda vendedor: vendedor.get("valor_vendas"), reverse=True)
+
+        # Distribuindo os valores adicionais para os 3 primeiros colocados
+        lista_vendedores[0]["adicional"] = 500
+        lista_vendedores[1]["adicional"] = 250
+        lista_vendedores[2]["adicional"] = 125
+
+        print("*"*50)
+        print("* INFORMAÇÕES SOBRE AS VENDAS *")
+        print(f"VALOR TOTAL DAS VENDAS: {valor_total_de_vendas:.2f}")
+        print(f"VALOR MÉDIO POR VENDEDOR: {media_total_de_vendas:.2f}")
+        print("*" * 50)
+        print("* RANKING DOS VENDEDORES")
+
+        for vendedor in lista_vendedores:
+            print(f"{'Código:'.ljust(30)} {vendedor.get('codigo')}")
+            print(f"{'Nome:'.ljust(30)} {vendedor.get('nome').ljust(40)}")
+            print(f"{'Total de Vendas:'.ljust(30)} {vendedor.get('valor_vendas'):.2f}")
+            print(f"{'Bônus:'.ljust(30)} {vendedor.get('bonus')}%")
+
+            if vendedor.get("adicional"):
+                print(f"{'Valor adicional'.ljust(30)} R$ {vendedor.get('adicional')}")
+
+            print("-"*50)
