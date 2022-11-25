@@ -43,8 +43,12 @@ class Pokemon:
     def type(self, new_type):
         self._type = new_type
 
+    # TAREFA: Criar os métodos attack(), dodge() e evolve()
+    # Os métodos attack() e dodge() vão ser simplesmente prints das ações do pokemon
+    # Por exemplo: O método attack vai imprimir na tela ("O Pikachu atacou!")
+    # O método evolve, vai alterar os atributos _name e health do pokemon
 
-# *args, **kwargs
+
 if __name__ == "__main__":
     # Instanciamos a classe chamando ela como se fosse uma função
     pikachu = Pokemon(name="Pikachu", type="Elétrico", health=70)
@@ -55,4 +59,3 @@ if __name__ == "__main__":
     print(pikachu.type)
 
     bulbasaur = Pokemon(name="Bulbasaur", type="Planta", health=85)
-    print(pikachu)
