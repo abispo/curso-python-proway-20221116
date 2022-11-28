@@ -58,3 +58,15 @@ if __name__ == "__main__":
     )
     """
     conexao.execute(comando)
+
+    # Criação da tabela tb_postagens
+    comando = """
+    CREATE TABLE IF NOT EXISTS tb_postagens(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id_usuario INTEGER NOT NULL,
+        titulo TEXT NOT NULL,
+        texto TEXT NOT NULL,
+        FOREIGN KEY (id_usuario) REFERENCES tb_usuarios (id)
+    )
+    """
+    conexao.execute(comando)
