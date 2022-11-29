@@ -133,3 +133,8 @@ dmypy.json
 
 # PyCharm
 .idea/
+
+# SQLite databases
+.sqlite3
+.sqlite
+.db
