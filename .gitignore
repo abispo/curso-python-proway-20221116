@@ -135,6 +135,6 @@ dmypy.json
 .idea/
 
 # SQLite databases
-.sqlite3
-.sqlite
-.db
+*.sqlite3
+*.sqlite
+*.db
