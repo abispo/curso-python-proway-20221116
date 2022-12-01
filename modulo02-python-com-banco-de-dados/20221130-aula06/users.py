@@ -9,9 +9,16 @@ def list_users():
 
 
 def create_user(email, password):
-    pass
-    
+    # Instanciamos a model que queremos salvar
+    user = User(email=email, password=password)
 
+    # Adicionar esse objeto à sessão
+    session.add(user)
+
+    # Salvando o objeto na tabela
+    session.commit()
+
+    return user
 
 if __name__ == "__main__":
 
@@ -40,7 +47,12 @@ if __name__ == "__main__":
                 print("NÃO EXISTEM USUÁRIOS CADASTRADOS")
 
         elif option == 2:
-            pass
+            email = input("Informe o email do novo usuário: ")
+            password = input("Informe a senha do novo usuário: ")
+
+            user = create_user(email, password)
+
+            print(f"Usuário ({user.id}) {user.email} salvo com sucesso.")
 
         elif option == 3:
             pass
