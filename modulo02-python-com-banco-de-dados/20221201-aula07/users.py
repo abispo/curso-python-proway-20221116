@@ -20,6 +20,7 @@ def create_user(email, password):
 
     return user
 
+
 if __name__ == "__main__":
 
     # Cria as tabelas definidas no módulo models.py
@@ -45,6 +46,11 @@ if __name__ == "__main__":
 
             if len(users) == 0:
                 print("NÃO EXISTEM USUÁRIOS CADASTRADOS")
+
+            else:
+                for user in users:
+                    print(f"{user.id}) {user.email}")
+                print("-"*50)
 
         elif option == 2:
             email = input("Informe o email do novo usuário: ")
