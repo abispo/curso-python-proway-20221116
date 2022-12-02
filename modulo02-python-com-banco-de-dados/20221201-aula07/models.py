@@ -39,6 +39,7 @@ class User(Base):
     password = Column(String(100), nullable=False)
 
     profile = relationship("UserProfile", back_populates="user", uselist=False)
+    posts = relationship("Post", back_populates="user")
 
 
 class UserProfile(Base):
@@ -62,6 +63,8 @@ class Post(Base):
     user_id = Column(Integer, ForeignKey("tb_users.id"), nullable=False)
     title = Column(String(100), nullable=False)
     content = Column(Text, nullable=False)
+
+    user = relationship("User", back_populates="posts", uselist=False)
 
 
 class Tag(Base):
