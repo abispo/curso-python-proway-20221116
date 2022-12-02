@@ -13,6 +13,8 @@ from database import Base
 # Classes que representam os tipos de dados que as colunas terão
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, Table
 
+from sqlalchemy.orm import relationship
+
 # Tabela associativa entre as models Post e Tag (N:N)
 posts_tags = Table(
     "tb_posts_tags", Base.metadata,
@@ -36,6 +38,8 @@ class User(Base):
     email = Column(String(100), nullable=False)
     password = Column(String(100), nullable=False)
 
+    profile = relationship("UserProfile", back_populates="user", uselist=False)
+
 
 class UserProfile(Base):
 
@@ -46,6 +50,8 @@ class UserProfile(Base):
 
     first_name = Column(String(100), nullable=False)
     last_name = Column(String(150))
+
+    user = relationship("User", back_populates="profile", uselist=False)
 
 
 class Post(Base):
