@@ -8,10 +8,12 @@ Tag                 -> tb_tags (categorias)
 Comment             -> tb_comments
 """
 
+from datetime import datetime
+
 from database import Base
 
 # Classes que representam os tipos de dados que as colunas terão
-from sqlalchemy import Column, Integer, String, ForeignKey, Text, Table
+from sqlalchemy import Column, Integer, String, ForeignKey, Text, Table, DateTime
 
 from sqlalchemy.orm import relationship
 
@@ -63,6 +65,7 @@ class Post(Base):
     user_id = Column(Integer, ForeignKey("tb_users.id"), nullable=False)
     title = Column(String(100), nullable=False)
     content = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.now)
 
     user = relationship("User", back_populates="posts", uselist=False)
 
