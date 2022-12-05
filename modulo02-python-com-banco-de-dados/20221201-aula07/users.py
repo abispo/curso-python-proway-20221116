@@ -1,4 +1,4 @@
-
+1
 from database import engine, Base, session
 from models import User, UserProfile
 
