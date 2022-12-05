@@ -1,0 +1,7 @@
+alembic==1.8.1
+greenlet==2.0.1
+Mako==1.2.4
+MarkupSafe==2.1.1
+PyMySQL==1.0.2
+python-dotenv==0.21.0
+SQLAlchemy==1.4.44
