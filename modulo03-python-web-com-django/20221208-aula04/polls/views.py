@@ -35,8 +35,14 @@ def results(request, question_id):
 
 def vote(request, question_id):
 
+    # Carregamos um objeto Question da tabela tb_questions, a partir do question_id
     question = get_object_or_404(Question, pk=question_id)
     try:
+        # Abaixo tentamos carregar um objeto choice a partir do valor da opção choice que vem
+        # do formulário. 'choice' é o nome dos elementos radio button no formulário. Aqui
+        # receberemos o valor que estiver em 'value'
+        # POST é um dicionários com os campos que foram enviados de um formulário utilizando o
+        # método POST
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         context = {
@@ -46,7 +52,16 @@ def vote(request, question_id):
         return render(request, "polls/detail.html", context)
 
     else:
+        # Incrementamos a quantidade de votos da opção selecionada em 1
         selected_choice.votes += 1
+
+        # Salvamos (atualizamos) o objeto com a nova quantidade de votos
         selected_choice.save()
+
+
+        # Por boas práticas, sempre que um usuário enviar dados via POST, redirecionamos o usuário
+        # para outra página, por isso utilizamos o HttpResponseRedirect
+        # A função reverse gera a URL a partir do nome da rota. Se essa rota precisar receber
+        # algum tipo de parâmetro, passamos pelo argumento args
 
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
