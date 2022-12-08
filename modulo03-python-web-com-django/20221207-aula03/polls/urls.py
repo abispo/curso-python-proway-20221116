@@ -4,6 +4,9 @@ from django.urls import path
 # A partir da pasta onde o arquivo está, import o módulo views
 from .views import index, detail, results, vote
 
+# namespace
+app_name = "polls"
+
 urlpatterns = [
     path("", index, name="index"),
     # question_id é um parâmetro passado via URL
