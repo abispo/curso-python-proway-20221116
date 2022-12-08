@@ -1,0 +1,10 @@
+<h1>{{ question.question_text }}</h1>
+<hr>
+
+<ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<a href="{% url 'polls:index' %}">Voltar para a página principal</a>
