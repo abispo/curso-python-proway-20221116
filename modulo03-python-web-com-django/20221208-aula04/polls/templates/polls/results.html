@@ -9,4 +9,26 @@
     {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Deseja votar novamente?</a>
+<a href="{% url 'polls:detail' question.id %}">Deseja votar novamente?</a><br>
+<a href="{% url 'polls:index' %}">Voltar para a página principal</a>
+<hr>
+<h3>Fazer um comentário</h3>
+<form action="{% url 'polls:comment' question.id %}" method="post">
+    {% csrf_token %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <textarea name="text" cols="50", rows="10"></textarea>
+    <br><br>
+    <input type="submit" value="Votar">
+    <hr>
+</form>
+
+{% if question.comment_set.all %}
+    <h2>Comentários</h2>
+    <ul>
+        {% for comment in question.comment_set.all %}
+            <li>{{ comment.text }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Sem comentários publicados</p>
+{% endif %}

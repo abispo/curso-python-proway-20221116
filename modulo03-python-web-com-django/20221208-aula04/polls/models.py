@@ -24,3 +24,8 @@ class Choice(models.Model):
 
     class Meta:
         db_table = 'tb_choices'
+
+
+class Comment(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    text = models.TextField()

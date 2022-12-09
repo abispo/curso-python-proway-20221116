@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
-from polls.models import Question, Choice
+from polls.models import Question, Choice, Comment
 
 
 # function-based view
@@ -86,3 +86,21 @@ def statistics(request):
     }
 
     return render(request, "polls/statistics.html", context)
+
+
+def comment(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+
+    text = request.POST.get("text")
+
+    if len(text.replace(" ", "")) == 0:
+        text = "vazio"
+
+    comment = Comment(
+        question=question,
+        text=text
+    )
+
+    comment.save()
+
+    return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
