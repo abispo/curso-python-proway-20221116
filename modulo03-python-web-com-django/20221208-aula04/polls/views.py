@@ -1,3 +1,4 @@
+from django.db.models import Sum
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -66,3 +67,22 @@ def vote(request, question_id):
         # algum tipo de parâmetro, passamos pelo argumento args
 
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+
+
+def statistics(request):
+
+    total_questions = Question.objects.count()
+    total_choices = Choice.objects.count()
+    most_voted_choices = Choice.objects.order_by('-votes')[:3]
+    questions_with_more_votes = Question.objects.annotate(total=Sum("choice__votes")).order_by("-total")
+    questions_with_less_votes = Question.objects.annotate(total=Sum("choice__votes")).order_by("total")
+
+    context = {
+        "total_questions": total_questions,
+        "total_choices": total_choices,
+        "most_voted_choices": most_voted_choices,
+        "questions_with_more_votes": questions_with_more_votes,
+        "questions_with_less_votes": questions_with_less_votes
+    }
+
+    return render(request, "polls/statistics.html", context)
