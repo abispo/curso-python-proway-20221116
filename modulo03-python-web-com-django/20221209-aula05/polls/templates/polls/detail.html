@@ -11,5 +11,6 @@
     <br>
     <input type="submit" value="Votar">
     <hr>
+    <a href="{% url 'polls:results' question.id %}">Ir para os resultados</a><br>
     <a href="{% url 'polls:index' %}">Voltar para a página principal</a>
 </form>
