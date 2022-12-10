@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.db.models import Sum
 
@@ -92,3 +92,9 @@ def statistics(request):
     }
 
     return render(request, "polls/statistics.html", context)
+
+
+def comment(request, question_id):
+    text = request.POST['text']
+
+    return HttpResponse(f"Comentário: {text}")
