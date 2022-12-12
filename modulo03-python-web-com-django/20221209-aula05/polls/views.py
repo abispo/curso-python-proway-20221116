@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.db.models import Sum
 
-from polls.models import Question, Choice
+from polls.models import Question, Choice, Comment
 
 
 # function-based view
@@ -96,5 +96,14 @@ def statistics(request):
 
 def comment(request, question_id):
     text = request.POST['text']
+    question = get_object_or_404(Question, pk=question_id)
 
-    return HttpResponse(f"Comentário: {text}")
+    comment = Comment(
+        question=question, text=text
+    )
+
+    comment.save()
+
+    return HttpResponseRedirect(
+        reverse("polls:results", args=(question.id,))
+    )
