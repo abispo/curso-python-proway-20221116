@@ -1,2 +1,10 @@
 <h1>Finanças Pessoais</h1>
 <hr>
+
+{% if user.is_authenticated %}
+    <p>Você está logado como {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Deslogar</a>
+{% else %}
+    <p>Você não está logado</p>
+    <a href="{% url 'login' %}">Logar</a>
+{% endif %}
