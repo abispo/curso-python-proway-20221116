@@ -31,3 +31,7 @@ def transacoes_por_usuario(request, user_id):
 def contas_por_usuario(request, user_id):
 
     return render(request, "financas/contas_por_usuario.html")
+
+
+def nova_conta(request, user_id):
+    return render(request, "financas/nova_conta.html")

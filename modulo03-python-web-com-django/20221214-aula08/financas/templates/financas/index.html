@@ -9,7 +9,7 @@
 <hr>
 
 {% if num_contas == 0 %}
-    <p>Você não possui contas. <a href="#">Clique aqui</a> para criar a primeira.</p>
+    <p>Você não possui contas. <a href="{% url 'financas:nova_conta' user_id=user.id %}">Clique aqui</a> para criar a primeira.</p>
 {% else %}
     <p>Você possui <strong>{{ num_contas }}</strong> contas. <a href="{% url 'financas:contas_por_usuario' user_id=user.id %}">Clique aqui</a> para visualizar a página de contas</p>
 {% endif %}

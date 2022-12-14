@@ -1,6 +1,11 @@
 from django.urls import path
 
-from .views import index, transacoes_por_usuario, contas_por_usuario
+from .views import (
+    index,
+    transacoes_por_usuario,
+    contas_por_usuario,
+    nova_conta
+)
 
 app_name = "financas"
 
@@ -15,5 +20,10 @@ urlpatterns = [
         "<int:user_id>/contas",
         contas_por_usuario,
         name="contas_por_usuario"
+    ),
+    path(
+        "<int:user_id>/contas/nova",
+        nova_conta,
+        name="nova_conta"
     )
 ]
