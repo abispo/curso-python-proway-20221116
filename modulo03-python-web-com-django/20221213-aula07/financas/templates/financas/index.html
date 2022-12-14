@@ -1,10 +1,16 @@
 <h1>Finanças Pessoais</h1>
-<hr>
-
 {% if user.is_authenticated %}
     <p>Você está logado como {{ user.username }}</p>
     <a href="{% url 'logout' %}">Deslogar</a>
 {% else %}
     <p>Você não está logado</p>
     <a href="{% url 'login' %}">Logar</a>
+{% endif %}
+<hr>
+
+<p>Contas</p>
+{% if num_transacoes == 0 %}
+    <p>Você não possui transações. <a href="#">Clique aqui</a> para criar a primeira.</p>
+{% else %}
+    <p>Você realizou <strong>{{ num_transacoes }}</strong> transações. <a href="{% url 'financas:transacoes_por_usuario' user_id=user.id %}">Clique aqui</a> para visualizar a página de transações</p>
 {% endif %}
