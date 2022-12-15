@@ -1,0 +1,25 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+  <h1>Criar nova transação</h1>
+  <hr>
+
+  <form action="" method="post">
+    <table style="border-style: solid">
+      <tr>
+        <th>Conta a ser debitada</th>
+        <th>Conta a ser creditada</th>
+        <th>Valor da transação</th>
+      </tr>
+      <tr>
+        <td>
+          <select name="conta_debitada_id">
+            {% for conta in contas_do_usuario %}
+              <option value="{{ conta.id }}">{{ conta.name }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+    </table>
+  </form>
+{% endblock %}

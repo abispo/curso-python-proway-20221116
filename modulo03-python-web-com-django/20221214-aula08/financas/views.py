@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 
 from .models import Transacao, ContaFinanceira
 
@@ -29,9 +31,53 @@ def transacoes_por_usuario(request, user_id):
 
 
 def contas_por_usuario(request, user_id):
+    todas_contas = ContaFinanceira.objects.filter(
+        usuario=request.user
+    )
 
-    return render(request, "financas/contas_por_usuario.html")
+    context = {
+        "todas_contas": todas_contas
+    }
+
+    return render(
+        request,
+        "financas/contas_por_usuario.html",
+        context
+    )
 
 
 def nova_conta(request, user_id):
-    return render(request, "financas/nova_conta.html")
+
+    if request.method == "GET":
+        return render(request, "financas/nova_conta.html")
+
+    elif request.method == "POST":
+        nome_nova_conta = request.POST.get("nome_conta")
+
+        nova_conta = ContaFinanceira(
+            usuario=request.user,
+            nome=nome_nova_conta
+        )
+        nova_conta.save()
+
+        return HttpResponseRedirect(
+            reverse("financas:contas_por_usuario", args=(request.user.id,))
+        )
+
+
+def nova_transacao(request, user_id):
+
+    if request.method == "GET":
+        contas_do_usuario = ContaFinanceira.objects.filter(
+            usuario=request.user
+        )
+
+        context = {
+            "contas_do_usuario": contas_do_usuario
+        }
+
+        return render(
+            request,
+            "financas/nova_transacao.html",
+            context
+        )
