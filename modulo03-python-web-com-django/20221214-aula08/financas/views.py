@@ -67,10 +67,11 @@ def nova_conta(request, user_id):
 
 def nova_transacao(request, user_id):
 
+    contas_do_usuario = ContaFinanceira.objects.filter(
+        usuario=request.user
+    )
+
     if request.method == "GET":
-        contas_do_usuario = ContaFinanceira.objects.filter(
-            usuario=request.user
-        )
 
         context = {
             "contas_do_usuario": contas_do_usuario
@@ -80,4 +81,23 @@ def nova_transacao(request, user_id):
             request,
             "financas/nova_transacao.html",
             context
+        )
+
+    elif request.method == "POST":
+
+        conta_debitada_id = int(request.POST.get("conta_debitada_id"))
+        conta_creditada_id = int(request.POST.get("conta_creditada_id"))
+
+        if conta_debitada_id == conta_creditada_id:
+            context = {
+                "erro": "Você não pode definir a mesma conta como débito e crédito",
+                "contas_do_usuario": contas_do_usuario
+            }
+
+            return render(request, "financas/nova_transacao.html", context)
+
+        valor_transacao = request.POST.get("valor_transacao")
+
+        return HttpResponseRedirect(
+            reverse("financas:transacoes_por_usuario", args=(request.user.id,))
         )

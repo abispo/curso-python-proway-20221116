@@ -4,7 +4,13 @@
   <h1>Criar nova transação</h1>
   <hr>
 
+  {% if erro %}
+    <strong>{{ erro }}</strong>
+  {% endif %}
+
   <form action="" method="post">
+    {% csrf_token %}
+
     <table style="border-style: solid">
       <tr>
         <th>Conta a ser debitada</th>
@@ -15,11 +21,25 @@
         <td>
           <select name="conta_debitada_id">
             {% for conta in contas_do_usuario %}
-              <option value="{{ conta.id }}">{{ conta.name }}</option>
+              <option value="{{ conta.id }}">{{ conta.nome }}</option>
             {% endfor %}
           </select>
         </td>
+        <td>
+          <select name="conta_creditada_id">
+            {% for conta in contas_do_usuario %}
+              <option value="{{ conta.id }}">{{ conta.nome }}</option>
+            {% endfor %}
+          </select>
+        </td>
+        <td>
+          <input type="text" name="valor_transacao">
+        </td>
       </tr>
     </table>
+
+    <br>
+    <input type="submit" value="Cadastrar Transação">
+    
   </form>
 {% endblock %}
