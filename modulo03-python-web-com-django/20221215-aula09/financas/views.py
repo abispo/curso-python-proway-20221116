@@ -97,6 +97,24 @@ def nova_transacao(request, user_id):
             return render(request, "financas/nova_transacao.html", context)
 
         valor_transacao = request.POST.get("valor_transacao")
+        valor_transacao = valor_transacao.replace(",", ".")
+        valor_transacao = float(valor_transacao)
+
+        conta_debitada = ContaFinanceira.objects.get(pk=conta_debitada_id)
+        conta_creditada = ContaFinanceira.objects.get(pk=conta_creditada_id)
+
+        conta_debitada.saldo -= valor_transacao
+        conta_creditada.saldo += valor_transacao
+
+        transacao = Transacao(
+            conta_debito=conta_debitada,
+            conta_credito=conta_creditada,
+            valor=valor_transacao
+        )
+
+        transacao.save()
+        conta_debitada.save()
+        conta_creditada.save()
 
         return HttpResponseRedirect(
             reverse("financas:transacoes_por_usuario", args=(request.user.id,))
