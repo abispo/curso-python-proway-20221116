@@ -27,7 +27,19 @@ def index(request):
 
 def transacoes_por_usuario(request, user_id):
 
-    return render(request, "financas/transacoes_por_usuario.html")
+    todas_transacoes = Transacao.objects.filter(
+        conta_debito__usuario=request.user
+    )
+
+    context = {
+        "todas_transacoes": todas_transacoes
+    }
+
+    return render(
+        request,
+        "financas/transacoes_por_usuario.html",
+        context
+    )
 
 
 def contas_por_usuario(request, user_id):
