@@ -131,3 +131,16 @@ def nova_transacao(request, user_id):
         return HttpResponseRedirect(
             reverse("financas:transacoes_por_usuario", args=(request.user.id,))
         )
+
+
+def detalhe_conta(request, user_id, conta_id):
+
+    conta = ContaFinanceira.objects.get(pk=conta_id)
+
+    context = {"conta": conta}
+
+    return render(
+        request,
+        "financas/detalhe_conta.html",
+        context
+    )

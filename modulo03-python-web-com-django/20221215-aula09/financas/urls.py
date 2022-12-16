@@ -5,7 +5,8 @@ from .views import (
     transacoes_por_usuario,
     contas_por_usuario,
     nova_conta,
-    nova_transacao
+    nova_transacao,
+    detalhe_conta
 )
 
 app_name = "financas"
@@ -31,5 +32,10 @@ urlpatterns = [
         "<int:user_id>/transacoes/nova",
         nova_transacao,
         name="nova_transacao"
+    ),
+    path(
+        "<int:user_id>/contas/<int:conta_id>",
+        detalhe_conta,
+        name="detalhe_conta"
     )
 ]

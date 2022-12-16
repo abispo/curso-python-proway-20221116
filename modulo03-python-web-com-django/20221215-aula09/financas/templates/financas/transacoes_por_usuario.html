@@ -15,8 +15,8 @@
         </tr>
         {% for transacao in todas_transacoes %}
             <tr>
-                <td><a href="#">{{ transacao.conta_debito.nome }}</a></td>
-                <td><a href="#">{{ transacao.conta_credito.nome }}</a></td>
+                <td><a href="{% url 'financas:detalhe_conta' user.id transacao.conta_debito.id %}">{{ transacao.conta_debito.nome }}</a></td>
+                <td><a href="{% url 'financas:detalhe_conta' user.id transacao.conta_credito.id %}">{{ transacao.conta_credito.nome }}</a></td>
                 <td>R$ {{ transacao.valor }}</td>
                 <td>{{ transacao.criado_em|date:"d/m/Y" }}</td>
             </tr>
