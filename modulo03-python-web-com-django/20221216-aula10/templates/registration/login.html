@@ -1,0 +1,38 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+    <p>Seu usuário e/ou senha estão incorretos. Tente novamente</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>
+            Sua conta não tem acesso a essa página. Para prosseguir,
+            faça login com uma conta que tenha acesso
+        </p>
+    {% else %}
+        <p>Faça o login para visualizar essa página</p>
+    {% endif %}
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+<p><a href="{% url 'password_reset' %}">Recuperar a senha</a></p>
+
+{% endblock %}
