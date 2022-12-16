@@ -1,0 +1,22 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h1>Contas de {{ user.username }}</h1>
+    <hr>
+    <a href="{% url 'financas:index' %}">Voltar para a página principal</a><br>
+    <a href="{% url 'financas:nova_conta' user_id=user.id %}">Criar nova conta</a>
+    <br><br>
+    <table>
+        <tr>
+            <th>Nome da conta</th>
+            <th>Saldo</th>
+        </tr>
+        {% for conta in todas_contas %}
+            <tr>
+                <td><a href="{% url 'financas:detalhe_conta' user.id conta.id %}">{{ conta.nome }}</a></td>
+                <td>{{ conta.saldo }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

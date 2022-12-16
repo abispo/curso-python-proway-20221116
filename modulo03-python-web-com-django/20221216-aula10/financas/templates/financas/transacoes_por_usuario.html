@@ -1,0 +1,26 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h1>Transações de {{ user.username }}</h1>
+    <hr>
+    <a href="{% url 'financas:index' %}">Voltar para a página principal</a><br>
+    <a href="{% url 'financas:nova_transacao' user.id %}">Criar nova transação</a>
+    <br><br>
+    <table style="border-style: solid;">
+        <tr>
+            <th>Conta debitada</th>
+            <th>Conta Creditada</th>
+            <th>Valor da transação</th>
+            <th>Data/Hora</th>
+        </tr>
+        {% for transacao in todas_transacoes %}
+            <tr>
+                <td><a href="{% url 'financas:detalhe_conta' user.id transacao.conta_debito.id %}">{{ transacao.conta_debito.nome }}</a></td>
+                <td><a href="{% url 'financas:detalhe_conta' user.id transacao.conta_credito.id %}">{{ transacao.conta_credito.nome }}</a></td>
+                <td>R$ {{ transacao.valor }}</td>
+                <td>{{ transacao.criado_em|date:"d/m/Y" }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
