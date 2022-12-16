@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.db.models import Q
 
 from .models import Transacao, ContaFinanceira
 
@@ -136,8 +137,14 @@ def nova_transacao(request, user_id):
 def detalhe_conta(request, user_id, conta_id):
 
     conta = ContaFinanceira.objects.get(pk=conta_id)
+    transacoes = Transacao.objects.filter(
+        Q(conta_debito=conta) | Q(conta_credito=conta)
+    )
 
-    context = {"conta": conta}
+    context = {
+        "conta": conta,
+        "transacoes": transacoes
+    }
 
     return render(
         request,

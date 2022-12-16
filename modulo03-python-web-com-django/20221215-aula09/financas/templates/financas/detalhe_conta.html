@@ -9,5 +9,31 @@
 <p>Data de criação: {{ conta.criado_em|date:"d/m/Y" }}</p>
 <p>Última atualização: {{ conta.atualizado_em|date:"d/m/Y" }}</p>
 
+<h3>Transações onde a conta '{{ conta.nome }}' aparece:</h3>
+
+{% if transacoes %}
+    <table>
+        <thead>
+            <tr>
+                <th>Conta Debitada</th>
+                <th>Conta Creditada</th>
+                <th>Valor da Transação</th>
+                <th>Data/Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transacao in transacoes %}
+            <tr>
+                <td>{{ transacao.conta_debito.nome }}</td>
+                <td>{{ transacao.conta_credito.nome }}</td>
+                <td>R$ {{ transacao.valor }}</td>
+                <td>{{ transacao.criado_em|date:"d/m/Y" }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Essa conta não aparece em nenhuma transação</p>
+{% endif %}
 
 {% endblock %}
