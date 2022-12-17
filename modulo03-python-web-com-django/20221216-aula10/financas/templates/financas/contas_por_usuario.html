@@ -4,7 +4,7 @@
     <h1>Contas de {{ user.username }}</h1>
     <hr>
     <a href="{% url 'financas:index' %}">Voltar para a página principal</a><br>
-    <a href="{% url 'financas:nova_conta' user_id=user.id %}">Criar nova conta</a>
+    <a href="{% url 'financas:nova_conta' %}">Criar nova conta</a>
     <br><br>
     <table>
         <tr>
@@ -13,7 +13,7 @@
         </tr>
         {% for conta in todas_contas %}
             <tr>
-                <td><a href="{% url 'financas:detalhe_conta' user.id conta.id %}">{{ conta.nome }}</a></td>
+                <td><a href="{% url 'financas:detalhe_conta' conta.id %}">{{ conta.nome }}</a></td>
                 <td>{{ conta.saldo }}</td>
             </tr>
         {% endfor %}

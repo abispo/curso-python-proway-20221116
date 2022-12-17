@@ -1,22 +1,28 @@
-<h1>Finanças Pessoais</h1>
-{% if user.is_authenticated %}
-    <p>Você está logado como {{ user.username }}</p>
-    <a href="{% url 'logout' %}">Deslogar</a>
-{% else %}
-    <p>Você não está logado</p>
-    <a href="{% url 'login' %}">Logar</a>
-{% endif %}
-<hr>
+{% extends 'template_base.html' %}
 
-{% if num_contas == 0 %}
-    <p>Você não possui contas. <a href="{% url 'financas:nova_conta' user_id=user.id %}">Clique aqui</a> para criar a primeira.</p>
-{% else %}
-    <p>Você possui <strong>{{ num_contas }}</strong> conta{{ num_contas|pluralize }}. <a href="{% url 'financas:contas_por_usuario' user_id=user.id %}">Clique aqui</a> para visualizar a página de contas</p>
-{% endif %}
+{% block content %}
+
+    <h1>Finanças Pessoais</h1>
+    {% if user.is_authenticated %}
+        <p>Você está logado como {{ user.username }}</p>
+        <a href="{% url 'logout' %}">Deslogar</a>
+    {% else %}
+        <p>Você não está logado</p>
+        <a href="{% url 'login' %}">Logar</a>
+    {% endif %}
+    <hr>
+
+    {% if num_contas == 0 %}
+        <p>Você não possui contas. <a href="{% url 'financas:nova_conta' %}">Clique aqui</a> para criar a primeira.</p>
+    {% else %}
+        <p>Você possui <strong>{{ num_contas }}</strong> conta{{ num_contas|pluralize }}. <a href="{% url 'financas:contas_por_usuario' %}">Clique aqui</a> para visualizar a página de contas</p>
+    {% endif %}
 
 
-{% if num_transacoes == 0 %}
-    <p>Você não possui transações. <a href="{% url 'financas:nova_transacao' user.id %}">Clique aqui</a> para criar a primeira.</p>
-{% else %}
-    <p>Você realizou <strong>{{ num_transacoes }}</strong> transaç{{ num_transacoes|pluralize:'ão,ões' }}. <a href="{% url 'financas:transacoes_por_usuario' user_id=user.id %}">Clique aqui</a> para visualizar a página de transações</p>
-{% endif %}
+    {% if num_transacoes == 0 %}
+        <p>Você não possui transações. <a href="{% url 'financas:nova_transacao' %}">Clique aqui</a> para criar a primeira.</p>
+    {% else %}
+        <p>Você realizou <strong>{{ num_transacoes }}</strong> transaç{{ num_transacoes|pluralize:'ão,ões' }}. <a href="{% url 'financas:transacoes_por_usuario' %}">Clique aqui</a> para visualizar a página de transações</p>
+    {% endif %}
+
+{% endblock content %}

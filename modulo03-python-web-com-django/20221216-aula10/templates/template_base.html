@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Finanças Pessoais</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-{% block content%}{% endblock %}
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
 
-</body>
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    {% if user.is_authenticated %}
+        <header>
+            <div class="navbar navbar-expand-md bg-light">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a href="{% url 'financas:index' %}" class="nav-link" active aria-current="page">Página Principal</a>
+                            </li>
+                            <div class="nav-item">
+                                <a href="{% url 'financas:contas_por_usuario' %}" class="nav-link">Contas</a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="{% url 'financas:transacoes_por_usuario' %}" class="nav-link">Transações</a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="#" class="nav-link disabled">Perfil</a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="{% url 'logout' %}" class="nav-link">Sair</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {% endif %}
+
+    <div class="container">
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+    </div>
+
+    <footer></footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script> -->
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+  </body>
 </html>

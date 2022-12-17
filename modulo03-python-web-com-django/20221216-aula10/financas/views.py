@@ -26,7 +26,7 @@ def index(request):
     )
 
 
-def transacoes_por_usuario(request, user_id):
+def transacoes_por_usuario(request):
 
     todas_transacoes = Transacao.objects.filter(
         conta_debito__usuario=request.user
@@ -43,7 +43,7 @@ def transacoes_por_usuario(request, user_id):
     )
 
 
-def contas_por_usuario(request, user_id):
+def contas_por_usuario(request):
     todas_contas = ContaFinanceira.objects.filter(
         usuario=request.user
     )
@@ -59,7 +59,7 @@ def contas_por_usuario(request, user_id):
     )
 
 
-def nova_conta(request, user_id):
+def nova_conta(request):
 
     if request.method == "GET":
         return render(request, "financas/nova_conta.html")
@@ -78,7 +78,7 @@ def nova_conta(request, user_id):
         )
 
 
-def nova_transacao(request, user_id):
+def nova_transacao(request):
 
     contas_do_usuario = ContaFinanceira.objects.filter(
         usuario=request.user
@@ -134,7 +134,7 @@ def nova_transacao(request, user_id):
         )
 
 
-def detalhe_conta(request, user_id, conta_id):
+def detalhe_conta(request, conta_id):
 
     conta = ContaFinanceira.objects.get(pk=conta_id)
     transacoes = Transacao.objects.filter(

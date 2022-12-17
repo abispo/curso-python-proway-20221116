@@ -14,27 +14,27 @@ app_name = "financas"
 urlpatterns = [
     path("", index, name="index"),
     path(
-        "<int:user_id>/transacoes",
+        "transacoes/",
         transacoes_por_usuario,
         name="transacoes_por_usuario"
     ),
     path(
-        "<int:user_id>/contas",
+        "contas/",
         contas_por_usuario,
         name="contas_por_usuario"
     ),
     path(
-        "<int:user_id>/contas/nova",
+        "contas/nova/",
         nova_conta,
         name="nova_conta"
     ),
     path(
-        "<int:user_id>/transacoes/nova",
+        "transacoes/nova/",
         nova_transacao,
         name="nova_transacao"
     ),
     path(
-        "<int:user_id>/contas/<int:conta_id>",
+        "contas/<int:conta_id>/",
         detalhe_conta,
         name="detalhe_conta"
     )

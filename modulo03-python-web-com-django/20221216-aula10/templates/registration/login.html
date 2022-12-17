@@ -3,7 +3,13 @@
 {% block content %}
 
 {% if form.errors %}
-    <p>Seu usuário e/ou senha estão incorretos. Tente novamente</p>
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Seu usuário e/ou senha estão incorretos. Tente novamente
+            </div>
+        </div>
+    </div>
 {% endif %}
 
 {% if next %}
@@ -19,20 +25,34 @@
 
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
-    <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-    </table>
-    <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
-</form>
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating my-2">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Informe o usuário" required>
+                <label for="username" class="form-label">Usuário</label>
+            </div>
+        </div>
+    </div>
 
-<p><a href="{% url 'password_reset' %}">Recuperar a senha</a></p>
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating mb-2">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Informe a senha" required>
+                <label for="password" class="form-label">Senha</label>
+            </div>
+        </div>
+    </div>        
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'password_reset' %}">Recuperar a senha</a>
+        </div>
+    </div>
+</form>
 
 {% endblock %}
