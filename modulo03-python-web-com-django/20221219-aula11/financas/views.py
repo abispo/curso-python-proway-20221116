@@ -11,22 +11,7 @@ from .models import Transacao, ContaFinanceira
 @login_required
 def index(request):
 
-    num_transacoes = Transacao.objects.filter(
-        conta_debito__usuario=request.user
-    ).count()
-
-    num_contas = ContaFinanceira.objects.filter(
-        usuario=request.user
-    ).count()
-
-    context = {
-        "num_transacoes": num_transacoes,
-        "num_contas": num_contas
-    }
-
-    return render(
-        request, "financas/index.html", context
-    )
+    return render(request, "financas/index.html")
 
 @login_required
 def transacoes_por_usuario(request):
@@ -162,3 +147,22 @@ def detalhe_conta(request, conta_id):
         "financas/detalhe_conta.html",
         context
     )
+
+
+@login_required
+def perfil_usuario(request):
+
+    num_transacoes = Transacao.objects.filter(
+        conta_debito__usuario=request.user
+    ).count()
+
+    num_contas = ContaFinanceira.objects.filter(
+        usuario=request.user
+    ).count()
+
+    context = {
+        "num_transacoes": num_transacoes,
+        "num_contas": num_contas
+    }
+
+    return render(request, "financas/perfil_usuario.html", context)

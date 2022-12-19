@@ -19,7 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
 
-    <title>Hello, world!</title>
+    <title>Finanças Pessoais - Proway</title>
   </head>
   <body>
 
@@ -43,7 +43,7 @@
                                 <a href="{% url 'financas:transacoes_por_usuario' %}" class="nav-link">Transações</a>
                             </div>
                             <div class="nav-item">
-                                <a href="#" class="nav-link disabled">Perfil</a>
+                                <a href="{% url 'financas:perfil_usuario' %}" class="nav-link">Perfil</a>
                             </div>
                             <div class="nav-item">
                                 <a href="{% url 'logout' %}" class="nav-link">Sair</a>

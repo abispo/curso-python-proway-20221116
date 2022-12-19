@@ -9,19 +9,4 @@
     </div>
     <hr>
 
-    {% comment %}
-        {% if num_contas == 0 %}
-            <p>Você não possui contas. <a href="{% url 'financas:nova_conta' %}">Clique aqui</a> para criar a primeira.</p>
-        {% else %}
-            <p>Você possui <strong>{{ num_contas }}</strong> conta{{ num_contas|pluralize }}. <a href="{% url 'financas:contas_por_usuario' %}">Clique aqui</a> para visualizar a página de contas</p>
-        {% endif %}
-
-
-        {% if num_transacoes == 0 %}
-            <p>Você não possui transações. <a href="{% url 'financas:nova_transacao' %}">Clique aqui</a> para criar a primeira.</p>
-        {% else %}
-            <p>Você realizou <strong>{{ num_transacoes }}</strong> transaç{{ num_transacoes|pluralize:'ão,ões' }}. <a href="{% url 'financas:transacoes_por_usuario' %}">Clique aqui</a> para visualizar a página de transações</p>
-        {% endif %}
-    {% endcomment %}
-
 {% endblock content %}
