@@ -1,4 +1,6 @@
-from django.http import HttpResponseRedirect
+
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.db.models import Q
@@ -6,6 +8,7 @@ from django.db.models import Q
 from .models import Transacao, ContaFinanceira
 
 
+@login_required
 def index(request):
 
     num_transacoes = Transacao.objects.filter(
@@ -25,7 +28,7 @@ def index(request):
         request, "financas/index.html", context
     )
 
-
+@login_required
 def transacoes_por_usuario(request):
 
     todas_transacoes = Transacao.objects.filter(
@@ -43,6 +46,7 @@ def transacoes_por_usuario(request):
     )
 
 
+@login_required
 def contas_por_usuario(request):
     todas_contas = ContaFinanceira.objects.filter(
         usuario=request.user
@@ -59,6 +63,7 @@ def contas_por_usuario(request):
     )
 
 
+@login_required
 def nova_conta(request):
 
     if request.method == "GET":
@@ -78,6 +83,7 @@ def nova_conta(request):
         )
 
 
+@login_required
 def nova_transacao(request):
 
     contas_do_usuario = ContaFinanceira.objects.filter(
@@ -134,9 +140,14 @@ def nova_transacao(request):
         )
 
 
+@login_required
 def detalhe_conta(request, conta_id):
 
     conta = ContaFinanceira.objects.get(pk=conta_id)
+
+    if conta.usuario != request.user:
+        return HttpResponse("Você não tem acesso a essa página", status=401)
+
     transacoes = Transacao.objects.filter(
         Q(conta_debito=conta) | Q(conta_credito=conta)
     )
