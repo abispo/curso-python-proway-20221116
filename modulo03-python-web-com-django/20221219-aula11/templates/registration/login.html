@@ -1,0 +1,58 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Seu usuário e/ou senha estão incorretos. Tente novamente
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>
+            Sua conta não tem acesso a essa página. Para prosseguir,
+            faça login com uma conta que tenha acesso
+        </p>
+    {% else %}
+        <p>Faça o login para visualizar essa página</p>
+    {% endif %}
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating my-2">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Informe o usuário" required>
+                <label for="username" class="form-label">Usuário</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating mb-2">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Informe a senha" required>
+                <label for="password" class="form-label">Senha</label>
+            </div>
+        </div>
+    </div>        
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'password_reset' %}">Recuperar a senha</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

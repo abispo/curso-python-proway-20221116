@@ -1,0 +1,18 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+  <h1>Criar nova conta</h1>
+  <hr>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <label for="txtNomeConta">Nome da Conta:</label>
+    <input type="text" name="nome_conta" id="txtNomeConta">
+    <input type="submit" value="Cadastrar">
+  </form>
+
+  <br><br>
+
+  <a href="{% url 'financas:contas_por_usuario' %}">Voltar para a listagem de contas</a><br>
+  <a href="{% url 'financas:index' %}">Voltar para a página principal</a>
+{% endblock %}

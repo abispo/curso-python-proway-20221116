@@ -1,0 +1,64 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h3>Detalhes da conta '{{ conta.nome }}'</h3>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            Saldo: R$ {{ conta.saldo }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Data de criação: {{ conta.criado_em|date:"d/m/Y" }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            Última atualização: {{ conta.atualizado_em|date:"d/m/Y" }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h4>Transações com {{ conta.nome }}</h4>
+        </div>
+    </div>
+    <hr>
+
+{% if transacoes %}
+    <div class="row justify-content-center">
+        <div class="col col-6">
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Conta Debitada</th>
+                        <th>Conta Creditada</th>
+                        <th>Valor da Transação</th>
+                        <th>Data/Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for transacao in transacoes %}
+                    <tr>
+                        <td>{{ transacao.conta_debito.nome }}</td>
+                        <td>{{ transacao.conta_credito.nome }}</td>
+                        <td>R$ {{ transacao.valor }}</td>
+                        <td>{{ transacao.criado_em|date:"d/m/Y" }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <p>Essa conta não aparece em nenhuma transação</p>
+{% endif %}
+
+{% endblock %}
