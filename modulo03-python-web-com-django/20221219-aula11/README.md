@@ -1,37 +1,15 @@
 
-Projeto Finanças Pessoais
-    - Projeto simples de gerenciamento financeiro pessoal;
-    - Se baseia no conceito de contas e transações;
-    - Um usuário terá contas dentro do sistema.
+# Desafios
 
-ContaSalario
-ContaCorrenteViacredi
-ContaCelesc
-ContaSamae
+## Desafio 01
 
-Exemplo 1: Usuário recebe salário
-Transação
-Conta de saída (débito) ContaSalario
-Conta de entrada (crédito) ContaCorrenteViacredi
-Valor
+* Habilitar o menu Perfil
+* Criar o template financas/perfil_usuario.html
+    * Esse template deve conter as seguintes informações:
+        * Nome completo do usuário (Junção dos atributos first_name e last_name)
+        * Email (atributo email)
+        * Data de cadastro do usuário (atributo date_joined)
+        * Data do último login (atributo last_login)
+        * A quantidade de contas que o usuário possui
+        * A quantidade de transações realizadas
 
-ContaSalario            = 0
-ContaCorrenteViacredi   = 0
-Valor                   = 5000
-
-ContaSalario            = 0 - 5000  = -5000
-ContaCorrenteViacredi   = 0 + 5000  = 5000
-
-
-Exemplo 2: Usuário vai pagar uma conta de água no valor de R$ 120,00
-Transação
-Conta de saída (débito) ContaCorrenteViacredi
-Conta de entrada (crédito) ContaSamae
-Valor   120
-
-ContaCorrenteViacredi = 5000 - 120 = 4880
-ContaSame             = 0 + 120    = 120
-
-
-O sistema será multiusuário
-    - Introdução dos conceitos de autenticação e autorização
