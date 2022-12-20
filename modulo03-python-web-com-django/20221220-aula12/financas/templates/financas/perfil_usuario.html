@@ -1,0 +1,65 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h1>Perfil de {{ user.username }}</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Nome
+        </div>
+        <div class="col col-3">
+            <strong>{{ user.first_name }} {{ user.last_name }}</strong>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Email
+        </div>
+        <div class="col col-3">
+            <strong>{{ user.email }}</strong>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Cadastrado em:
+        </div>
+        <div class="col col-3">
+            <strong>{{ user.date_joined|date:"d/m/Y H:i:s" }}</strong>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Último login:
+        </div>
+        <div class="col col-3">
+            <strong>{{ user.last_login|date:"d/m/Y H:i:s"}}</strong>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Número de contas
+        </div>
+        <div class="col col-3">
+            <strong><a href="{% url 'financas:contas_por_usuario' %}">{{ num_contas }}</a></strong>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col col-2">
+            Número de transações
+        </div>
+        <div class="col col-3">
+            <strong><a href="{% url 'financas:transacoes_por_usuario' %}">{{ num_transacoes }}</a></strong>
+        </div>
+    </div>
+
+{% endblock content %}

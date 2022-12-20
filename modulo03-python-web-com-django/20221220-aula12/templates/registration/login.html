@@ -1,0 +1,68 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Seu usuário e/ou senha estão incorretos. Tente novamente
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                Sua conta não tem acesso a essa página. Para prosseguir, faça login com uma conta que tenha acesso.
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                Faça o login para visualizar essa página
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating my-2">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Informe o usuário" required>
+                <label for="username" class="form-label">Usuário</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <div class="form-floating mb-2">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Informe a senha" required>
+                <label for="password" class="form-label">Senha</label>
+            </div>
+        </div>
+    </div>        
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <a href="#">Criar conta</a>
+        </div>
+        <div class="col d-flex justify-content-start">
+            <a href="{% url 'password_reset' %}">Recuperar a senha</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
