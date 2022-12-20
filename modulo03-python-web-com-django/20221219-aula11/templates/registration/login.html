@@ -14,12 +14,17 @@
 
 {% if next %}
     {% if user.is_authenticated %}
-        <p>
-            Sua conta não tem acesso a essa página. Para prosseguir,
-            faça login com uma conta que tenha acesso
-        </p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                Sua conta não tem acesso a essa página. Para prosseguir, faça login com uma conta que tenha acesso.
+            </div>
+        </div>
     {% else %}
-        <p>Faça o login para visualizar essa página</p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                Faça o login para visualizar essa página
+            </div>
+        </div>
     {% endif %}
 {% endif %}
 
@@ -45,11 +50,16 @@
 
     <input type="hidden" name="next" value="{{ next }}">
 
-    <div class="row justify-content-center">
-        <div class="col-1">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
             <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
         </div>
-        <div class="col-2">
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <a href="#">Criar conta</a>
+        </div>
+        <div class="col d-flex justify-content-start">
             <a href="{% url 'password_reset' %}">Recuperar a senha</a>
         </div>
     </div>
