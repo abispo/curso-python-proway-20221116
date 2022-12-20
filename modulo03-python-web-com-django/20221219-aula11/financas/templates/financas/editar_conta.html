@@ -1,0 +1,21 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col col-3 mb-2">
+                <label class="form-label" for="nome_conta">Nome da conta:</label>
+                <input type="text" name="nome_conta" id="nome_conta" class="form-control" value="{{ conta.nome }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock content %}

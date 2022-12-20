@@ -19,9 +19,15 @@
             Data de criação: {{ conta.criado_em|date:"d/m/Y" }}
         </div>
     </div>
-    <div class="row mb-3">
+    <div class="row mb">
         <div class="col">
             Última atualização: {{ conta.atualizado_em|date:"d/m/Y" }}
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <a href="{% url 'financas:editar_conta' conta.id %}">Editar</a>
         </div>
     </div>
 

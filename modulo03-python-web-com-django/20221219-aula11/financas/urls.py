@@ -7,7 +7,8 @@ from .views import (
     nova_conta,
     nova_transacao,
     detalhe_conta,
-    perfil_usuario
+    perfil_usuario,
+    editar_conta
 )
 
 app_name = "financas"
@@ -44,4 +45,9 @@ urlpatterns = [
         perfil_usuario,
         name="perfil_usuario"
     ),
+    path(
+        "contas/<int:conta_id>/editar",
+        editar_conta,
+        name="editar_conta"
+    )
 ]

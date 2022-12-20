@@ -1,7 +1,7 @@
 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.db.models import Q
 
@@ -166,3 +166,20 @@ def perfil_usuario(request):
     }
 
     return render(request, "financas/perfil_usuario.html", context)
+
+
+@login_required
+def editar_conta(request, conta_id):
+
+    conta = get_object_or_404(ContaFinanceira, pk=conta_id)
+
+    if request.method == "GET":
+        return render(request, "financas/editar_conta.html", {"conta": conta})
+
+    elif request.method == "POST":
+
+        nome_conta = request.POST.get("nome_conta", conta.nome)
+        conta.nome = nome_conta
+        conta.save()
+
+        return HttpResponseRedirect(reverse("financas:detalhe_conta", args=(conta.id,)))
