@@ -13,7 +13,7 @@
 1. O usuário deslogado na página de login (/contas/login), clica no link 'Criar conta'
 2. Ele é então redirecionado para a página /financas/criar-usuario
 3. Nessa página haverá um formulário com 3 campos: username, email e password
-4. Quando o usuário clicar no botão cadastrar, esse usuário será cadastrado e será redirecionado para a página de login (/financas/criar-usuario)
+4. Quando o usuário clicar no botão cadastrar, esse usuário será cadastrado e será redirecionado para a página de login (/contas/login)
 5. A partir daí, o usuário deve conseguir logar no site
 
 # Lembretes!
