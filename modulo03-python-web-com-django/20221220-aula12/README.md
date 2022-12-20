@@ -3,21 +3,22 @@
 
 ## Desafio 01
 
-* Habilitar o menu Perfil
-* Criar a url para o perfil de usuário (financas/perfil)
-* Criar o template financas/perfil_usuario.html
-    * Esse template deve conter as seguintes informações:
-        * Nome completo do usuário (Junção dos atributos first_name e last_name)
-        * Email (atributo email)
-        * Data de cadastro do usuário (atributo date_joined)
-        * Data do último login (atributo last_login)
-        * A quantidade de contas que o usuário possui
-        * A quantidade de transações realizadas
-* Associar o URL com a view function
+* Criar uma página de cadastro de usuário
+  * Essa página terá 2 campos:
+    * Nome de usuário (username)
+    * Senha (password)
+  * Essa página também terá um botão, que quando clicado, irá salvar o novo usuário
 
-## Desafio 02
-* Atualizar as informações da conta (nome)
-* Ná página de detalhes da conta, após o texto 'Última atualização', haverá um link de nome 'Editar'
-* Clicando nesse link, o usuário será direcionado para a página de edição de conta (`financas/<id_conta>/editar`)
-* Haverá um formulário onde o usuário poderá informar um novo nome para a conta
-* Estando tudo OK, depois que o usuário clicar no botão de atualizar, ele será redirecionado para a página de detalhes da conta
+1. O usuário deslogado na página de login (/contas/login), clica no link 'Criar conta'
+2. Ele é então redirecionado para a página /contas/criar
+3. Nessa página haverá um formulário com 3 campos: username, email e password
+4. Quando o usuário clicar no botão cadastrar, esse usuário será cadastrado e será redirecionado para a página de login (/contas/login)
+5. A partir daí, o usuário deve conseguir logar no site
+
+# Lembretes!
+* Precisamos criar um template onde será feito o formulário (financas/criar_usuario.html)
+* Após criar o template, vamos criar a função view que irá cadastrar o usuário (criar_usuario)
+* Após criar a função view, vamos precisar associar essa view a uma rota no arquivo urls.py
+
+# Como criar um novo usuário no Django?
+Utilizamos o método `User.objects.create_user(username, email, password)`
