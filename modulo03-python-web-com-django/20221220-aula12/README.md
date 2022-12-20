@@ -4,15 +4,16 @@
 ## Desafio 01
 
 * Criar uma página de cadastro de usuário
-  * Essa página terá 2 campos:
+  * Essa página terá 3 campos:
     * Nome de usuário (username)
+    * Email (email)
     * Senha (password)
   * Essa página também terá um botão, que quando clicado, irá salvar o novo usuário
 
 1. O usuário deslogado na página de login (/contas/login), clica no link 'Criar conta'
-2. Ele é então redirecionado para a página /contas/criar
+2. Ele é então redirecionado para a página /financas/criar-usuario
 3. Nessa página haverá um formulário com 3 campos: username, email e password
-4. Quando o usuário clicar no botão cadastrar, esse usuário será cadastrado e será redirecionado para a página de login (/contas/login)
+4. Quando o usuário clicar no botão cadastrar, esse usuário será cadastrado e será redirecionado para a página de login (/financas/criar-usuario)
 5. A partir daí, o usuário deve conseguir logar no site
 
 # Lembretes!
