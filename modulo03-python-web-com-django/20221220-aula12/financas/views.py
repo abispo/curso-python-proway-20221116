@@ -1,5 +1,6 @@
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -187,4 +188,21 @@ def editar_conta(request, conta_id):
 
 def criar_usuario(request):
 
-    return render(request, "financas/criar_usuario.html")
+    # Se o método for o GET, apenas renderizar o template
+    # Se o método for o POST, pegar os dados, salvar um novo
+    # usuário e redirecionar o usuário para /contas/login
+
+    if request.method == "GET":
+        return render(request, "financas/criar_usuario.html")
+
+    elif request.method == "POST":
+
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        User.objects.create_user(
+            username=username, email=email, password=password
+        )
+
+        return HttpResponseRedirect(reverse("login"))
