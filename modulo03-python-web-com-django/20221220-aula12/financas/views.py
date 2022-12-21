@@ -183,3 +183,8 @@ def editar_conta(request, conta_id):
         conta.save()
 
         return HttpResponseRedirect(reverse("financas:detalhe_conta", args=(conta.id,)))
+
+
+def criar_usuario(request):
+
+    return render(request, "financas/criar_usuario.html")

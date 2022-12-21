@@ -1,0 +1,45 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h2>Criar novo usuário</h2>
+        </div>
+    </div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="row justify-content-center">
+            <div class="col col-3">
+                <div class="row">
+                    <div class="col">
+                        <label for="username" class="form-label">Nome de usuário</label>
+                        <input type="text" name="username" id="username" class="form-control" required>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+        
+                <div class="row mb-2">
+                    <div class="col">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}
