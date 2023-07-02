@@ -13,7 +13,7 @@ parso==0.8.3
 pickleshare==0.7.5
 prompt-toolkit==3.0.36
 pure-eval==0.2.2
-Pygments==2.13.0
+Pygments==2.15.0
 python-dotenv==0.21.0
 six==1.16.0
 sqlparse==0.4.3
